@@ -1,143 +1,831 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matan Sudry</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        h2 {
-            font-size: 1.5rem;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 0.5rem;
-            margin-top: 2rem;
-        }
-        h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.2rem;
-        }
-        a {
-            color: #0366d6;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .bio {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-        }
-        .links {
-            margin-bottom: 2rem;
-        }
-        .links a {
-            margin-right: 1rem;
-            font-weight: bold;
-        }
-        .publication {
-            margin-bottom: 2rem;
-        }
-        .pub-title {
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-        .pub-venue {
-            font-weight: bold;
-            color: #d73a49;
-            margin-right: 0.5rem;
-        }
-        .pub-authors {
-            font-style: italic;
-            margin-bottom: 0.5rem;
-        }
-        .pub-abstract {
-            font-size: 0.95rem;
-            color: #555;
-            margin-bottom: 0.5rem;
-        }
-        .pub-links a {
-            margin-right: 1rem;
-            font-size: 0.9rem;
-            border: 1px solid #e1e4e8;
-            padding: 2px 8px;
-            border-radius: 4px;
-            background-color: #fafbfc;
-        }
-        .pub-links a:hover {
-            background-color: #f3f4f6;
-            text-decoration: none;
-        }
-    </style>
-</head>
-<body>
+<!DOCTYPE HTML>
+<!--
+	Story by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Matan Sudry</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			.spotlight.style1.image-bleed-unified {
+				position: relative;
+				isolation: isolate;
+			}
 
-    <h1>Matan Sudry</h1>
-    
-    <div class="bio">
-        <p>Hi (: I'm Matan, a robotics and machine learning researcher with 7 years of experience in autonomous vehicles and robotics. I currently work as a Senior Computer Vision DL Researcher at Trigo Vision, focusing on zero-shot object recognition and multi-modal features. My core expertise lies in computer vision, reinforcement learning, and automated planning.</p>
-        <p>You can reach me via: matansudry at gmail dot com</p>
-    </div>
+			.spotlight.style1.image-bleed-unified::before {
+				content: '';
+				position: absolute;
+				inset: 0;
+				z-index: 0;
+				background-image: var(--bg-image);
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+				pointer-events: none;
+			}
 
-    <div class="links">
-        <a href="https://github.com/matansudry" target="_blank">Github</a>
-        <a href="https://scholar.google.fi/citations?user=ZfJVqI8AAAAJ&hl=iw" target="_blank">Google Scholar</a>
-        <a href="https://www.linkedin.com/in/matan-sudry-187a41b0/?originalSubdomain=il" target="_blank">LinkedIn</a>
-    </div>
+			.spotlight.style1.image-bleed-unified > .content,
+			.spotlight.style1.image-bleed-unified > .image {
+				position: relative;
+				z-index: 1;
+			}
 
-    <h2>Publications and Pre-Prints</h2>
+			.spotlight.style1.image-bleed-unified .image img {
+				opacity: 0;
+			}
 
-    <div class="publication">
-        <span class="pub-title">TWISTED-RL: Hierarchical Skilled Agents for Knot-Tying without Human Demonstrations</span>
-        <br>
-        <span class="pub-venue">ICRA 2026</span>
-        <div class="pub-authors">G Freund, T Jurgenson, M Sudry, E Karpas</div>
-        <div class="pub-abstract">Robotic knot-tying is a fundamental challenge due to complex deformable-object dynamics and strict topological constraints. We present TWISTED-RL, which improves upon the prior state-of-the-art (TWISTED) by replacing its single-step supervised inverse model with a multi-step RL policy conditioned on abstract topological actions rather than goal states. This enables more delicate topological state transitions while avoiding costly data collection, allowing the agent to generalize across diverse knot configurations. TWISTED-RL solves previously unattainable knots of higher complexity, including the Figure-8 and Overhand, and establishes a new state of the art in demonstration-free robotic knot-tying.</div>
-    </div>
+			.spotlight.style1.image-bleed-video-full {
+				position: relative;
+				isolation: isolate;
+				overflow: hidden;
+			}
 
-    <div class="publication">
-        <span class="pub-title">Task and Motion Planning Using Infinite Completion Tree and Agnostic Skills</span>
-        <br>
-        <span class="pub-venue">SoCS 2025</span>
-        <div class="pub-authors">M Sudry, T Jurgenson, E Karpas</div>
-        <div class="pub-abstract">We build upon existing task and motion planning (TAMP) frameworks by integrating pre-trained Sequencing Task-Agnostic Policies (STAP) and Effort Level Search (ELS) to create a hierarchical approach that decouples high-level task decisions from low-level motion execution. The method incorporates a novel success rate estimator that provides more accurate task success predictions than traditional Q-value estimators, and leverages the infinite completion tree structure of ELS to dynamically adjust computational resources based on task complexity. Empirical results demonstrate significant improvements in planning efficiency and execution reliability over traditional methods.</div>
-        <div class="pub-links">
-            <a href="#">Paper</a>
-        </div>
-    </div>
+			.spotlight.style1.image-bleed-video-full .image-bleed-full-video {
+				position: absolute;
+				inset: 0;
+				z-index: 0;
+				pointer-events: none;
+			}
 
-    <div class="publication">
-        <span class="pub-title">RoboArm-NMP: a Learning Environment for Neural Motion Planning</span>
-        <br>
-        <span class="pub-venue">2024</span>
-        <div class="pub-authors">T Jurgenson, M Sudry, G Avineri, A Tamar</div>
-        <div class="pub-abstract">We present RoboArm-NMP, a learning and evaluation environment that allows simple and thorough evaluations of Neural Motion Planning (NMP) algorithms, focused on robotic manipulators. Our Python-based environment provides baseline implementations for learning control policies (either supervised or reinforcement learning based), a simulator based on PyBullet, data of solved instances using a classical motion planning solver, various representation learning methods for encoding the obstacles, and a clean interface between the learning and planning frameworks. Using RoboArm-NMP, we compare several prominent NMP design points, and demonstrate that the best methods mostly succeed in generalizing to unseen goals in a scene with fixed obstacles, but have difficulty in generalizing to unseen obstacle configurations, suggesting focus points for future research.</div>
-        <div class="pub-links">
-            <a href="#">Paper</a>
-        </div>
-    </div>
+			.spotlight.style1.image-bleed-video-full .image-bleed-full-video video {
+				display: block;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: center;
+				transition: opacity 0.75s ease-in-out;
+			}
 
-    <div class="publication">
-        <span class="pub-title">Hierarchical Planning for Rope Manipulation using Knot Theory and a Learned Inverse Model</span>
-        <br>
-        <span class="pub-venue">CORL 2023</span>
-        <div class="pub-authors">M Sudry, T Jurgenson, A Tamar, E Karpas</div>
-        <div class="pub-abstract">This work considers planning the manipulation of deformable 1-dimensional objects, such as ropes or cables, specifically to tie knots. We propose TWISTED: Tying With Inverse model and Search in Topological space Excluding Demos, a hierarchical planning approach which, at the high level, uses ideas from knot-theory to plan a sequence of rope configurations, while at the low level uses a neural-network inverse model to move between the configurations in the high-level plan. To train the neural network, we propose a self-supervised approach, where we learn from random movements of the rope. To focus the random movements on interesting configurations, such as knots, we propose a non-uniform sampling method tailored for this domain. In a simulation, we show that our approach can plan significantly faster and more accurately than baselines. We also show that our plans are robust to parameter changes in the physical simulation, suggesting future applications via sim2real.</div>
-        <div class="pub-links">
-            <a href="#">Paper</a>
-            <a href="#">Code</a>
-        </div>
-    </div>
+			.spotlight.style1.image-bleed-video-full > .content,
+			.spotlight.style1.image-bleed-video-full > .image {
+				position: relative;
+				z-index: 1;
+			}
 
-</body>
+			.spotlight.style1.image-bleed-unified.orient-right > .content,
+			.spotlight.style1.image-bleed-video-full.orient-right > .content {
+				background: linear-gradient(to right, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.96) 50%);
+			}
+
+			.spotlight.style1.image-bleed-unified.orient-left > .content,
+			.spotlight.style1.image-bleed-video-full.orient-left > .content {
+				background: linear-gradient(to left, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.96) 50%);
+			}
+
+			.spotlight.style1.image-bleed-video-full.onscroll-image-fade-in.is-inactive .image-bleed-full-video video {
+				opacity: 0;
+			}
+
+			.spotlight.style1.image-bleed-video-full.image-bleed-video-contain .image-bleed-full-video {
+				background: #ffffff;
+			}
+
+			.spotlight.style1.image-bleed-video-full.image-bleed-video-contain .image-bleed-full-video video {
+				object-fit: contain;
+			}
+
+			/*
+			 * Scaled bleed media (image-bleed-media-scale-75):
+			 * Alignment is automatic — media hugs the side opposite the content
+			 * based on orient-right / orient-left, so no extra class is needed.
+			 */
+			.spotlight.style1.image-bleed-video-full.image-bleed-media-scale-75 .image-bleed-full-video {
+				display: flex;
+				align-items: center;
+			}
+
+			.spotlight.style1.image-bleed-video-full.image-bleed-media-scale-75.orient-right .image-bleed-full-video {
+				justify-content: flex-start;
+			}
+
+			.spotlight.style1.image-bleed-video-full.image-bleed-media-scale-75.orient-left .image-bleed-full-video {
+				justify-content: flex-end;
+			}
+
+			.spotlight.style1.image-bleed-video-full.image-bleed-media-scale-75 .image-bleed-full-video video {
+				width: 75%;
+				height: 75%;
+			}
+
+			.spotlight.style1.image-bleed-unified.image-bleed-media-scale-75::before {
+				transform: scale(0.75);
+			}
+
+			.spotlight.style1.image-bleed-unified.image-bleed-media-scale-75.orient-right::before {
+				transform-origin: left center;
+			}
+
+			.spotlight.style1.image-bleed-unified.image-bleed-media-scale-75.orient-left::before {
+				transform-origin: right center;
+			}
+
+			@media screen and (max-width: 736px) and (orientation: portrait) {
+				.spotlight.style1.image-bleed-unified::before {
+					display: none;
+				}
+
+				.spotlight.style1.image-bleed-unified .image img {
+					opacity: 1;
+				}
+
+				.spotlight.style1.image-bleed-unified.orient-right > .content,
+				.spotlight.style1.image-bleed-unified.orient-left > .content {
+					background: none;
+				}
+
+				.spotlight.style1.image-bleed-unified.image-bleed-media-scale-75 .image img {
+					transform: scale(0.75);
+				}
+			}
+
+			.banner.style3 .content > ul.actions.hero-inline-social {
+				align-items: center;
+				flex-wrap: wrap;
+			}
+		</style>
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-RMEDZ0M41W"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		  gtag('config', 'G-RMEDZ0M41W');
+		</script>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="divided">
+
+				<!-- One -->
+					<section class="banner style3 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
+						<div class="content">
+							<h1>Tom Jurgenson</h1>
+							<ul class="actions fixed hero-inline-social">
+								<li><a href="#first" class="button big wide smooth-scroll-middle">Publications and Pre-Prints</a></li>
+								<li><a href="https://github.com/tomjur" class="icon brands style2 fa-github"><span class="label">Github</span></a></li>
+								<li><a href="https://scholar.google.com/citations?user=1YjIvioAAAAJ" class="icon brands style2 fa-google"><span class="label">Google Scholar</span></a></li>
+								<li><a href="https://www.linkedin.com/in/tom-jurgenson-4842833b/" class="icon brands style2 fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+<!--								<li><a href="https://twitter.com/tomjur" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>-->
+							</ul>
+							<p class="minor">
+								I'm an AI researcher with a PhD in reinforcement learning and robotics (supervised by
+								<a href="https://avivt.github.io/avivt/">Prof. Aviv Tamar</a>
+								at the <a href="https://ece.technion.ac.il/">Electrical and Computer Engineering Department</a>,
+								<a href="https://www.technion.ac.il/en/">Technion – Israel Institute of Technology</a>).
+							</p>
+							<p class="minor">
+								Currently I'm a senior applied scientist at Microsoft working on RLHF and post-training
+								methods for Copilot Deep Researcher agents. My research focuses on advancing RL
+								capabilities in robotics and LLM post-training by integrating it with useful priors such as
+								foundation models, planning, demonstrations and world models.
+							</p>
+							<p class="minor">
+								I also mentor students, am open to new academic collaborations, and consult for startups
+								in robotics and reinforcement learning.
+							</p>
+							<p class="minor">You can reach me via: tom.jurgenson@gmail.com</p>
+						</div>
+						<div class="image">
+							<img src="images/tomj.jpg" alt="" />
+						</div>
+					</section>
+
+			<!-- Two -->
+
+				<!-- New Publications -->
+				<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in image-bleed-unified image-bleed-media-scale-75" id="first" style="--bg-image: url('images/vlm_rb_method.svg')">
+					<div class="content">
+						<h2>VLM-Guided Experience Replay</h2>
+						<h3>Pre-print</h3>
+						<h4><a href="https://esharony.me/">E Sharony</a>, <b>T Jurgenson</b>, <a href="https://www.orrkrup.com/">O Krupnik</a>, D Di Castro, S Mannor</h4>
+						<p>
+							We propose VLM-RB, a plug-and-play framework that uses frozen Vision-Language Models
+							to prioritize semantically meaningful experiences in reinforcement learning replay buffers.
+							Unlike traditional methods that rely on TD-error, VLM-RB leverages the semantic reasoning
+							capabilities of pre-trained VLMs to identify transitions representing genuine task progress —
+							without any fine-tuning. Across discrete and continuous domains, VLM-RB achieves
+							11–52% higher success rates and 19–45% better sample efficiency compared to uniform
+							and prioritized experience replay baselines.
+						</p>
+						<ul class="actions fixed">
+							<li><a href="https://arxiv.org/abs/2602.01915" class="button">Paper</a></li>
+							<li><a href="https://esharony.me/projects/vlm-rb/" class="button">Project Page</a></li>
+						</ul>
+					</div>
+					<div class="image">
+						<img src="images/vlm_rb_method.svg" alt="" loading="lazy" />
+					</div>
+				</section>
+
+				<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in image-bleed-video-full image-bleed-media-scale-75">
+					<div class="image-bleed-full-video">
+						<video autoplay loop muted playsinline poster="images/twisted_rl_poster.jpg">
+							<source src="images/twisted_rl_demo.mp4" type="video/mp4" />
+						</video>
+					</div>
+					<div class="content">
+						<h2>TWISTED-RL: Hierarchical Skilled Agents for Knot-Tying without Human Demonstrations</h2>
+						<h3>ICRA 2026</h3>
+						<h4>G Freund, <b>T Jurgenson</b>, M Sudry, <a href="https://karpase.net.technion.ac.il/">E Karpas</a></h4>
+						<p>
+							Robotic knot-tying is a fundamental challenge due to complex deformable-object dynamics
+							and strict topological constraints. We present TWISTED-RL, which improves upon the prior
+							state-of-the-art (TWISTED) by replacing its single-step supervised inverse model with a
+							multi-step RL policy conditioned on abstract topological actions rather than goal states.
+							This enables more delicate topological state transitions while avoiding costly data collection,
+							allowing the agent to generalize across diverse knot configurations. TWISTED-RL solves
+							previously unattainable knots of higher complexity, including the Figure-8 and Overhand,
+							and establishes a new state of the art in demonstration-free robotic knot-tying.
+						</p>
+						<ul class="actions fixed">
+							<li><a href="https://arxiv.org/abs/2602.14526" class="button">Paper</a></li>
+							<li><a href="https://github.com/guyfreund/twisted_rl/" class="button">Code</a></li>
+							<li><a href="https://sites.google.com/view/twisted-rl" class="button">Project Page</a></li>
+						</ul>
+					</div>
+					<div class="image"></div>
+				</section>
+
+				<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in">
+					<div class="content">
+						<h2>Task and Motion Planning Using Infinite Completion Tree and Agnostic Skills</h2>
+						<h3>SoCS 2025</h3>
+						<h4>M Sudry, <b>T Jurgenson</b>, <a href="https://karpase.net.technion.ac.il/">E Karpas</a></h4>
+						<p>
+							We build upon existing task and motion planning (TAMP) frameworks by integrating
+							pre-trained Sequencing Task-Agnostic Policies (STAP) and Effort Level Search (ELS)
+							to create a hierarchical approach that decouples high-level task decisions from
+							low-level motion execution. The method incorporates a novel success rate estimator
+							that provides more accurate task success predictions than traditional Q-value estimators,
+							and leverages the infinite completion tree structure of ELS to dynamically adjust
+							computational resources based on task complexity. Empirical results demonstrate
+							significant improvements in planning efficiency and execution reliability over
+							traditional methods.
+						</p>
+						<ul class="actions fixed">
+							<li><a href="https://ojs.aaai.org/index.php/SOCS/article/view/35987/38142" class="button">Paper</a></li>
+						</ul>
+					</div>
+					<div class="image">
+						<img src="images/socs_ict_method.png" alt="" loading="lazy" />
+					</div>
+				</section>
+
+				<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in image-bleed-video-full image-bleed-video-contain image-bleed-media-scale-75">
+					<div class="image-bleed-full-video">
+						<video autoplay loop muted playsinline poster="images/ditree_poster.jpg">
+							<source src="images/ditree_demo.mp4" type="video/mp4" />
+						</video>
+					</div>
+					<div class="content">
+						<h2>Train-Once Plan-Anywhere Kinodynamic Motion Planning via Diffusion Trees</h2>
+						<h3>CoRL 2025</h3>
+						<h4>Y Hassidof, <b>T Jurgenson</b>, K Solovey</h4>
+						<p>
+							Kinodynamic motion planning requires computing collision-free trajectories while
+							respecting the robot's dynamic constraints, an essential problem often tackled with
+							sampling-based planners (SBPs). We present Diffusion Tree (DiTree), a
+							provably-generalizable framework that leverages diffusion policies as informed action
+							samplers to efficiently guide state-space search within SBPs. DiTree combines the
+							ability to model complex distributions of expert trajectories with the completeness
+							guarantees of SBPs. Trained on a single environment and evaluated on out-of-distribution
+							scenarios, DiTree achieves a 30% higher success rate on a car robot in simulation and
+							on a real race track, and on MuJoCo's Ant robot where classical SBPs fail entirely.
+						</p>
+						<ul class="actions fixed">
+							<li><a href="https://arxiv.org/abs/2508.21001" class="button">Paper</a></li>
+							<li><a href="https://github.com/MRSTechnion/DiTree" class="button">Code</a></li>
+							<li><a href="https://sites.google.com/view/ditree" class="button">Project Page</a></li>
+						</ul>
+					</div>
+					<div class="image"></div>
+				</section>
+
+			<!-- Existing Publications -->
+				<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in">
+					<div class="content">
+						<h2>MAMBA: an effective world model approach for meta-reinforcement learning</h2>
+						<h3>ICLR 2024</h3>
+						<h4><a href="https://zoharri.github.io/">Z Rimon</a>*, <b>T Jurgenson*</b>, <a href="https://www.orrkrup.com/">O Krupnik</a>, G Adler, <a href="https://avivt.github.io/avivt/">A Tamar</a></h4>
+							<p>
+							Meta-reinforcement learning (meta-RL) is a promising framework for tackling challenging
+								domains requiring efficient exploration. Existing meta-RL algorithms are characterized
+								by low sample efficiency, and mostly focus on low-dimensional task distributions. In
+								parallel, model-based RL methods have been successful in solving partially observable
+								MDPs, of which meta-RL is a special case. In this work, we leverage this success and
+								propose a new model-based approach to meta- RL, based on elements from existing
+								state-of-the-art model-based and meta-RL methods. We demonstrate the effectiveness of
+								our approach on common meta-RL benchmark domains, attaining greater return with better
+								sample efficiency (up to 15×) while requiring very little hyperparameter tuning. In
+								addition, we validate our approach on a slate of more challenging, higher-dimensional
+								domains, taking a step towards real-world generalizing agents.
+							</p>
+							<ul class="actions fixed">
+								<li><a href="https://arxiv.org/abs/2403.09859" class="button">Paper</a></li>
+								<li><a href="https://github.com/zoharri/mamba" class="button">Code</a></li>
+								<li><a href="https://sites.google.com/view/mamba-iclr2024" class="button">Project Page</a></li>
+							</ul>
+						</div>
+						<div class="image">
+							<img src="images/pandareachermamba.gif" alt="" loading="lazy" />
+						</div>
+					</section>
+
+					<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in">
+						<div class="content">
+							<h2>RoboArm-NMP: a Learning Environment for Neural Motion Planning</h2>
+							<h4><b>T Jurgenson</b>, M Sudry, G Avineri, <a href="https://avivt.github.io/avivt/">A Tamar</a></h4>
+							<p>
+								We present RoboArm-NMP, a learning and evaluation environment that allows simple and
+								thorough evaluations of Neural Motion Planning (NMP) algorithms, focused on robotic
+								manipulators. Our Python-based environment provides baseline implementations for
+								learning control policies (either supervised or reinforcement learning based), a
+								simulator based on PyBullet, data of solved instances using a classical motion planning
+								solver, various representation learning methods for encoding the obstacles, and a clean
+								interface between the learning and planning frameworks. Using RoboArm-NMP, we compare
+								several prominent NMP design points, and demonstrate that the best methods mostly
+								succeed in generalizing to unseen goals in a scene with fixed obstacles, but have
+								difficulty in generalizing to unseen obstacle configurations, suggesting focus points
+								for future research.
+							</p>
+							<ul class="actions fixed">
+								<li><a href="https://arxiv.org/abs/2405.16335" class="button">Paper</a></li>
+<!--								<li><a href="https://github.com/matansudry/twisted" class="button">Code</a></li>-->
+							</ul>
+						</div>
+						<div class="image">
+							<img src="images/robo-arm-nmp.png" alt="" loading="lazy" />
+						</div>
+					</section>
+
+					<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in">
+						<div class="content">
+							<h2>Fine-tuning generative models as an inference method for robotic tasks</h2>
+							<h3>CORL 2023</h3>
+							<h4><a href="https://www.orrkrup.com/">O Krupnik</a>, E Shafer, <b>T Jurgenson</b>, <a href="https://avivt.github.io/avivt/">A Tamar</a></h4>
+							<p>
+							Adaptable models could greatly benefit robotic agents operating in the real world, allowing
+								them to deal with novel and varying conditions. While approaches such as Bayesian
+								inference are well-studied frameworks for adapting models to evidence, we build on
+								recent advances in deep generative models which have greatly affected many areas of
+								robotics. Harnessing modern GPU acceleration, we investigate how to quickly adapt the
+								sample generation of neural network models to observations in robotic tasks. We propose
+								a simple and general method that is applicable to various deep generative models and
+								robotic environments. The key idea is to quickly fine-tune the model by fitting it to
+								generated samples matching the observed evidence, using the cross-entropy method. We
+								show that our method can be applied to both autoregressive models and variational
+								autoencoders, and demonstrate its usability in object shape inference from grasping,
+								inverse kinematics calculation, and point cloud completion.
+							</p>
+							<ul class="actions fixed">
+								<li><a href="https://openreview.net/forum?id=yGkqN4hqrJ" class="button">Paper</a></li>
+								<li><a href="https://github.com/orrkrup/mace" class="button">Code</a></li>
+								<li><a href="https://www.orrkrup.com/mace" class="button">Project Page</a></li>
+							</ul>
+						</div>
+						<div class="image">
+							<img src="images/mace.gif" alt="" loading="lazy" />
+						</div>
+					</section>
+
+					<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in">
+						<div class="content">
+							<h2>Hierarchical Planning for Rope Manipulation using Knot Theory and a Learned Inverse Model</h2>
+							<h3>CORL 2023</h3>
+							<h4>M Sudry, <b>T Jurgenson</b>, <a href="https://avivt.github.io/avivt/">A Tamar</a>, <a href="https://karpase.net.technion.ac.il/">E Karpas</a></h4>
+							<p>
+								This work considers planning the manipulation of deformable 1-dimensional objects, such
+								as ropes or cables, specifically to tie knots. We propose TWISTED: Tying With Inverse
+								model and Search in Topological space Excluding Demos, a hierarchical planning approach
+								which, at the high level, uses ideas from knot-theory to plan a sequence of rope
+								configurations, while at the low level uses a neural-network inverse model to move
+								between the configurations in the high-level plan. To train the neural network, we
+								propose a self-supervised approach, where we learn from random movements of the rope.
+								To focus the random movements on interesting configurations, such as knots, we propose
+								a non-uniform sampling method tailored for this domain. In a simulation, we show that
+								our approach can plan significantly faster and more accurately than baselines. We also
+								show that our plans are robust to parameter changes in the physical simulation,
+								suggesting future applications via sim2real.
+							</p>
+							<ul class="actions fixed">
+								<li><a href="https://openreview.net/forum?id=g_PPHV_GkX" class="button">Paper</a></li>
+								<li><a href="https://github.com/matansudry/twisted" class="button">Code</a></li>
+							</ul>
+						</div>
+						<div class="image">
+							<img src="images/twisted_rope.png" alt="" loading="lazy" />
+						</div>
+					</section>
+
+					<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in">
+						<div class="content">
+							<h2>Goal-Conditioned Supervised Learning with Sub-Goal Prediction</h2>
+							<h4><b>T Jurgenson</b>, <a href="https://avivt.github.io/avivt/">A Tamar</a></h4>
+							<p>
+							Recently, a simple yet effective algorithm – goal-conditioned supervised-learning (GCSL) –
+								was proposed to tackle goal-conditioned reinforcement-learning. GCSL is based on the
+								principle of hindsight learning: by observing states visited in previously executed
+								trajectories and treating them as attained goals, GCSL learns the corresponding actions
+								via supervised learning. However, GCSL only learns a goal-conditioned policy,
+								discarding other information in the process. Our insight is that the same hindsight
+								principle can be used to learn to predict goal-conditioned sub-goals from the same
+								trajectory. Based on this idea, we propose Trajectory Iterative Learner (TraIL), an
+								extension of GCSL that further exploits the information in a trajectory, and uses it
+								for learning to predict both actions and sub-goals. We investigate the settings in
+								which TraIL can make better use of the data, and discover that for several popular
+								problem settings, replacing real goals in GCSL with predicted TraIL sub-goals allows
+								the agent to reach a greater set of goal states using the exact same data as GCSL,
+								thereby improving its overall performance.
+							</p>
+							<ul class="actions stacked">
+								<li><a href="https://arxiv.org/abs/2305.10171" class="button">Paper</a></li>
+							</ul>
+						</div>
+						<div class="image">
+							<img src="images/trail_2_envs.png" alt="" loading="lazy" />
+						</div>
+					</section>
+
+				<!-- Three -->
+					<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in">
+						<div class="content">
+							<h2>Sub-Goal Trees – a Framework for Goal-Based Reinforcement Learning</h2>
+							<h3>ICML 2020</h3>
+							<h4><b>T Jurgenson</b>, O Avner, E Groshev, <a href="https://avivt.github.io/avivt/">A Tamar</a></h4>
+							<p>
+								Many AI problems, in robotics and other domains, are goal-based, essentially seeking
+								trajectories leading to various goal states. Reinforcement learning (RL), building on
+								Bellman’s optimality equation, naturally optimizes for a single goal, yet can be made
+								multi-goal by augmenting the state with the goal. Instead, we propose a new RL
+								framework, derived from a dynamic programming equation for the all pairs shortest path
+								(APSP) problem, which naturally solves multigoal queries. We show that this approach
+								has computational benefits for both standard and approximate dynamic programming.
+								Interestingly, our formulation prescribes a novel protocol for computing a trajectory:
+								instead of predicting the next state given its predecessor, as in standard RL, a
+								goal-conditioned trajectory is constructed by first predicting an intermediate state
+								between start and goal, partitioning the trajectory into two. Then, recursively,
+								predicting intermediate points on each sub-segment, until a complete trajectory is
+								obtained. We call this trajectory structure a subgoal tree. Building on it, we
+								additionally extend the policy gradient methodology to recursively predict sub-goals,
+								resulting in novel goal-based algorithms. Finally, we apply our method to neural motion
+								planning, where we demonstrate significant improvements compared to standard RL on
+								navigating a 7-DoF robot arm between obstacles.
+							</p>
+							<ul class="actions fixed">
+								<li><a href="http://proceedings.mlr.press/v119/jurgenson20a/jurgenson20a.pdf" class="button">Paper</a></li>
+								<li><a href="https://github.com/tomjur/SGT-PG" class="button">Code</a></li>
+							</ul>
+						</div>
+						<div class="image">
+							<img src="images/sgt_long_space.png" alt="" loading="lazy" />
+						</div>
+					</section>
+
+					<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in">
+						<div class="content">
+							<h2>Harnessing Reinforcement Learning for Neural Motion Planning</h2>
+							<h3>RSS 2019</h3>
+							<h4><b>T Jurgenson</b>, <a href="https://avivt.github.io/avivt/">A Tamar</a></h4>
+							<p>
+								Motion planning is an essential component in most of today’s robotic applications.
+								In this work, we consider the learning setting, where a set of solved motion planning
+								problems is used to improve the efficiency of motion planning on different, yet similar
+								problems. This setting is important in applications with rapidly changing environments
+								such as in e-commerce, among others. We investigate a general deep learning based
+								approach, where a neural network is trained to map an image of the domain, the current
+								robot state, and a goal robot state to the next robot state in the plan. We focus on
+								the learning algorithm, and compare supervised learning methods with reinforcement
+								learning (RL) algorithms. We first establish that supervised learning approaches are
+								inferior in their accuracy due to insufficient data on the boundary of the obstacles,
+								an issue that RL methods mitigate by actively exploring the domain. We then propose a
+								modification of the popular DDPG RL algorithm that is tailored to motion planning
+								domains, by exploiting the known model in the problem and the set of solved plans in
+								the data. We show that our algorithm, dubbed DDPG-MP, significantly improves the
+								accuracy of the learned motion planning policy. Finally, we show that given enough
+								training data, our method can plan significantly faster on novel domains than
+								off-the-shelf sampling based motion planners. Results of our experiments are shown in
+								https://youtu.be/wHQ4Y4mBRb8.
+							</p>
+							<ul class="actions fixed">
+								<li><a href="http://www.roboticsproceedings.org/rss15/p26.pdf" class="button">Paper</a></li>
+								<li><a href="https://github.com/tomjur/ModelBasedDDPG" class="button">Code</a></li>
+								<li><a href="https://www.youtube.com/watch?v=wHQ4Y4mBRb8" class="button">Video</a></li>
+							</ul>
+						</div>
+						<div class="image">
+							<img src="images/ddpg-mp-long.png" alt="" loading="lazy" />
+						</div>
+					</section>
+
+					<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in">
+						<div class="content">
+							<h2>Learning Decision Trees with Stochastic Linear Classifiers</h2>
+							<h3>ALT 2018</h3>
+							<h4><b>T Jurgenson</b>, <a href="https://www.cs.tau.ac.il/~mansour/">Y Mansour</a></h4>
+							<p>
+								In this work we propose a top-down decision tree learning algorithm with a class of
+								linear classifiers called stochastic linear classifiers as the internal nodes’
+								hypothesis class. To this end, we derive efficient algorithms for minimizing the Gini
+								index for this class for each internal node, although the problem is non-convex.
+								Moreover, the proposed algorithm has a theoretical guarantee under the weak stochastic
+								hypothesis assumption.
+							</p>
+							<ul class="actions fixed">
+								<li><a href="http://proceedings.mlr.press/v83/jurgenson18a.html" class="button">Paper</a></li>
+								<li><a href="https://github.com/tomjur/obliqueTree" class="button">Code</a></li>
+							</ul>
+						</div>
+						<div class="image">
+							<img src="images/msc_image.png" alt="" loading="lazy" />
+						</div>
+					</section>
+
+
+
+<!--				&lt;!&ndash; Five &ndash;&gt;-->
+<!--					<section class="wrapper style1 align-center">-->
+<!--						<div class="inner">-->
+<!--							<h2>Massa sed condimentum</h2>-->
+<!--							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id ante sed ex pharetra lacinia sit amet vel massa. Donec facilisis laoreet nulla eu bibendum. Donec ut ex risus. Fusce lorem lectus, pharetra pretium massa et, hendrerit vestibulum odio lorem ipsum.</p>-->
+<!--						</div>-->
+
+<!--						&lt;!&ndash; Gallery &ndash;&gt;-->
+<!--							<div class="gallery style2 medium lightbox onscroll-fade-in">-->
+<!--								<article>-->
+<!--									<a href="images/gallery/fulls/01.jpg" class="image">-->
+<!--										<img src="images/gallery/thumbs/01.jpg" alt="" />-->
+<!--									</a>-->
+<!--									<div class="caption">-->
+<!--										<h3>Ipsum Dolor</h3>-->
+<!--										<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>-->
+<!--										<ul class="actions fixed">-->
+<!--											<li><span class="button small">Details</span></li>-->
+<!--										</ul>-->
+<!--									</div>-->
+<!--								</article>-->
+<!--								<article>-->
+<!--									<a href="images/gallery/fulls/02.jpg" class="image">-->
+<!--										<img src="images/gallery/thumbs/02.jpg" alt="" />-->
+<!--									</a>-->
+<!--									<div class="caption">-->
+<!--										<h3>Feugiat Lorem</h3>-->
+<!--										<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>-->
+<!--										<ul class="actions fixed">-->
+<!--											<li><span class="button small">Details</span></li>-->
+<!--										</ul>-->
+<!--									</div>-->
+<!--								</article>-->
+<!--								<article>-->
+<!--									<a href="images/gallery/fulls/03.jpg" class="image">-->
+<!--										<img src="images/gallery/thumbs/03.jpg" alt="" />-->
+<!--									</a>-->
+<!--									<div class="caption">-->
+<!--										<h3>Magna Amet</h3>-->
+<!--										<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>-->
+<!--										<ul class="actions fixed">-->
+<!--											<li><span class="button small">Details</span></li>-->
+<!--										</ul>-->
+<!--									</div>-->
+<!--								</article>-->
+<!--								<article>-->
+<!--									<a href="images/gallery/fulls/04.jpg" class="image">-->
+<!--										<img src="images/gallery/thumbs/04.jpg" alt="" />-->
+<!--									</a>-->
+<!--									<div class="caption">-->
+<!--										<h3>Sed Tempus</h3>-->
+<!--										<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>-->
+<!--										<ul class="actions fixed">-->
+<!--											<li><span class="button small">Details</span></li>-->
+<!--										</ul>-->
+<!--									</div>-->
+<!--								</article>-->
+<!--								<article>-->
+<!--									<a href="images/gallery/fulls/05.jpg" class="image">-->
+<!--										<img src="images/gallery/thumbs/05.jpg" alt="" />-->
+<!--									</a>-->
+<!--									<div class="caption">-->
+<!--										<h3>Ultrices Magna</h3>-->
+<!--										<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>-->
+<!--										<ul class="actions fixed">-->
+<!--											<li><span class="button small">Details</span></li>-->
+<!--										</ul>-->
+<!--									</div>-->
+<!--								</article>-->
+<!--								<article>-->
+<!--									<a href="images/gallery/fulls/06.jpg" class="image">-->
+<!--										<img src="images/gallery/thumbs/06.jpg" alt="" />-->
+<!--									</a>-->
+<!--									<div class="caption">-->
+<!--										<h3>Sed Tempus</h3>-->
+<!--										<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>-->
+<!--										<ul class="actions fixed">-->
+<!--											<li><span class="button small">Details</span></li>-->
+<!--										</ul>-->
+<!--									</div>-->
+<!--								</article>-->
+<!--								<article>-->
+<!--									<a href="images/gallery/fulls/07.jpg" class="image">-->
+<!--										<img src="images/gallery/thumbs/07.jpg" alt="" />-->
+<!--									</a>-->
+<!--									<div class="caption">-->
+<!--										<h3>Ipsum Lorem</h3>-->
+<!--										<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>-->
+<!--										<ul class="actions fixed">-->
+<!--											<li><span class="button small">Details</span></li>-->
+<!--										</ul>-->
+<!--									</div>-->
+<!--								</article>-->
+<!--								<article>-->
+<!--									<a href="images/gallery/fulls/08.jpg" class="image">-->
+<!--										<img src="images/gallery/thumbs/08.jpg" alt="" />-->
+<!--									</a>-->
+<!--									<div class="caption">-->
+<!--										<h3>Magna Risus</h3>-->
+<!--										<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>-->
+<!--										<ul class="actions fixed">-->
+<!--											<li><span class="button small">Details</span></li>-->
+<!--										</ul>-->
+<!--									</div>-->
+<!--								</article>-->
+<!--								<article>-->
+<!--									<a href="images/gallery/fulls/09.jpg" class="image">-->
+<!--										<img src="images/gallery/thumbs/09.jpg" alt="" />-->
+<!--									</a>-->
+<!--									<div class="caption">-->
+<!--										<h3>Tempus Dolor</h3>-->
+<!--										<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>-->
+<!--										<ul class="actions fixed">-->
+<!--											<li><span class="button small">Details</span></li>-->
+<!--										</ul>-->
+<!--									</div>-->
+<!--								</article>-->
+<!--								<article>-->
+<!--									<a href="images/gallery/fulls/10.jpg" class="image">-->
+<!--										<img src="images/gallery/thumbs/10.jpg" alt="" />-->
+<!--									</a>-->
+<!--									<div class="caption">-->
+<!--										<h3>Sed Etiam</h3>-->
+<!--										<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>-->
+<!--										<ul class="actions fixed">-->
+<!--											<li><span class="button small">Details</span></li>-->
+<!--										</ul>-->
+<!--									</div>-->
+<!--								</article>-->
+<!--								<article>-->
+<!--									<a href="images/gallery/fulls/11.jpg" class="image">-->
+<!--										<img src="images/gallery/thumbs/11.jpg" alt="" />-->
+<!--									</a>-->
+<!--									<div class="caption">-->
+<!--										<h3>Magna Lorem</h3>-->
+<!--										<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>-->
+<!--										<ul class="actions fixed">-->
+<!--											<li><span class="button small">Details</span></li>-->
+<!--										</ul>-->
+<!--									</div>-->
+<!--								</article>-->
+<!--								<article>-->
+<!--									<a href="images/gallery/fulls/12.jpg" class="image">-->
+<!--										<img src="images/gallery/thumbs/12.jpg" alt="" />-->
+<!--									</a>-->
+<!--									<div class="caption">-->
+<!--										<h3>Ipsum Dolor</h3>-->
+<!--										<p>Lorem ipsum dolor amet, consectetur magna etiam elit. Etiam sed ultrices.</p>-->
+<!--										<ul class="actions fixed">-->
+<!--											<li><span class="button small">Details</span></li>-->
+<!--										</ul>-->
+<!--									</div>-->
+<!--								</article>-->
+<!--							</div>-->
+
+<!--					</section>-->
+
+<!--				&lt;!&ndash; Six &ndash;&gt;-->
+<!--					<section class="wrapper style1 align-center">-->
+<!--						<div class="inner">-->
+<!--							<h2>Ipsum sed consequat</h2>-->
+<!--							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id ante sed ex pharetra lacinia sit amet vel massa. Donec facilisis laoreet nulla eu bibendum. Donec ut ex risus. Fusce lorem lectus, pharetra pretium massa et, hendrerit vestibulum odio lorem ipsum.</p>-->
+<!--							<div class="items style1 medium onscroll-fade-in">-->
+<!--								<section>-->
+<!--									<span class="icon style2 major fa-gem"></span>-->
+<!--									<h3>Lorem</h3>-->
+<!--									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>-->
+<!--								</section>-->
+<!--								<section>-->
+<!--									<span class="icon solid style2 major fa-save"></span>-->
+<!--									<h3>Ipsum</h3>-->
+<!--									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>-->
+<!--								</section>-->
+<!--								<section>-->
+<!--									<span class="icon solid style2 major fa-chart-bar"></span>-->
+<!--									<h3>Dolor</h3>-->
+<!--									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>-->
+<!--								</section>-->
+<!--								<section>-->
+<!--									<span class="icon solid style2 major fa-wifi"></span>-->
+<!--									<h3>Amet</h3>-->
+<!--									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>-->
+<!--								</section>-->
+<!--								<section>-->
+<!--									<span class="icon solid style2 major fa-cog"></span>-->
+<!--									<h3>Magna</h3>-->
+<!--									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>-->
+<!--								</section>-->
+<!--								<section>-->
+<!--									<span class="icon style2 major fa-paper-plane"></span>-->
+<!--									<h3>Tempus</h3>-->
+<!--									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>-->
+<!--								</section>-->
+<!--								<section>-->
+<!--									<span class="icon solid style2 major fa-desktop"></span>-->
+<!--									<h3>Aliquam</h3>-->
+<!--									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>-->
+<!--								</section>-->
+<!--								<section>-->
+<!--									<span class="icon solid style2 major fa-sync-alt"></span>-->
+<!--									<h3>Elit</h3>-->
+<!--									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>-->
+<!--								</section>-->
+<!--								<section>-->
+<!--									<span class="icon solid style2 major fa-hashtag"></span>-->
+<!--									<h3>Morbi</h3>-->
+<!--									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>-->
+<!--								</section>-->
+<!--								<section>-->
+<!--									<span class="icon solid style2 major fa-bolt"></span>-->
+<!--									<h3>Turpis</h3>-->
+<!--									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>-->
+<!--								</section>-->
+<!--								<section>-->
+<!--									<span class="icon solid style2 major fa-envelope"></span>-->
+<!--									<h3>Ultrices</h3>-->
+<!--									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>-->
+<!--								</section>-->
+<!--								<section>-->
+<!--									<span class="icon solid style2 major fa-leaf"></span>-->
+<!--									<h3>Risus</h3>-->
+<!--									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>-->
+<!--								</section>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</section>-->
+
+<!--				&lt;!&ndash; Seven &ndash;&gt;-->
+<!--					<section class="wrapper style1 align-center">-->
+<!--						<div class="inner medium">-->
+<!--							<h2>Get in touch</h2>-->
+<!--							<form method="post" action="#">-->
+<!--								<div class="fields">-->
+<!--									<div class="field half">-->
+<!--										<label for="name">Name</label>-->
+<!--										<input type="text" name="name" id="name" value="" />-->
+<!--									</div>-->
+<!--									<div class="field half">-->
+<!--										<label for="email">Email</label>-->
+<!--										<input type="email" name="email" id="email" value="" />-->
+<!--									</div>-->
+<!--									<div class="field">-->
+<!--										<label for="message">Message</label>-->
+<!--										<textarea name="message" id="message" rows="6"></textarea>-->
+<!--									</div>-->
+<!--								</div>-->
+<!--								<ul class="actions special">-->
+<!--									<li><input type="submit" name="submit" id="submit" value="Send Message" /></li>-->
+<!--								</ul>-->
+<!--							</form>-->
+
+<!--						</div>-->
+<!--					</section>-->
+
+				<!-- Footer -->
+<!--					<footer class="wrapper style1 align-center">-->
+<!--						<div class="inner">-->
+<!--							<ul class="icons">-->
+<!--								<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>-->
+<!--								<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>-->
+<!--								<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>-->
+<!--								<li><a href="#" class="icon brands style2 fa-linkedin-in"><span class="label">LinkedIn</span></a></li>-->
+<!--								<li><a href="#" class="icon style2 fa-envelope"><span class="label">Email</span></a></li>-->
+<!--							</ul>-->
+<!--							<p>&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>-->
+<!--						</div>-->
+<!--					</footer>-->
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
